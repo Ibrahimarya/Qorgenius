@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generated Code QorGenius OS</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #f9fafb; margin: 0; padding: 0; color: #111827; }
+  .download-section { padding: 24px; text-align: center; background: #fff; max-width: 700px; margin: 40px auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,.1); }
+  .btn, .btn-primary, .btn-verify { padding: 10px 16px; border: 0; border-radius: 8px; cursor: pointer; font-size: 16px; }
+  .btn-primary { background: #2563eb; color: #fff; }
+  .btn { background: #e5e7eb; }
+  .btn-verify { background: #22c55e; color: #fff; }
+  .modal { position: fixed; inset: 0; background: rgba(0,0,0,.4); display: none; align-items: center; justify-content: center; }
+  .modal-card { width: 520px; max-width: 92vw; background: #fff; border-radius: 12px; box-shadow: 0 12px 30px rgba(0,0,0,.2); overflow: hidden; }
+  .modal-header { display:flex; align-items:center; justify-content:space-between; padding: 12px 16px; background: #1e3a8a; color: #fff; }
+  .modal-title { font-weight: 700; }
+  .modal-close { background: transparent; color: #fff; font-size: 20px; border: 0; cursor: pointer; }
+  .modal-body { padding: 20px 22px; text-align: center; }
+  .icon-wrap { font-size: 42px; margin-bottom: 8px; }
+  label { display:block; text-align:left; margin: 14px 0 6px; font-weight: 600; }
+  input[type="text"] { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 16px; }
+  .actions { display:flex; gap: 10px; justify-content: center; margin-top: 14px; }
+  small { display:block; margin-top: 10px; color: #6b7280; }
+  .intro-section { margin-top: 20px; text-align: center; }
+  .intro-section p { font-size: 16px; line-height: 1.4; }
+  .intro-section a { color: #2563eb; text-decoration: underline; }
+  .intro-img { margin-top: 10px; max-width: 320px; width: 80%; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+</style>
+</head>
+<body>
+
+<!-- DOWNLOAD SECTION -->
+<section id="download" class="download-section">
+  <h2>QorGenius Generated</h2>
+
+  <!-- Gambar baru di bawah judul -->
+  <img src="banner.jpg" alt="QorGenius Logo" class="intro-img">
+
+  <p>World’s first crypto-native operating system built for web3.</p>
+  <button type="button" class="btn-primary" onclick="openModal()">
+    Open Secure Download
+  </button>
+
+  <!-- Tambahan -->
+  <div class="intro-section">
+    <p>
+      ⚙️ <strong>QorGenius OS Introduction :</strong><br>
+      🗒️ Check out our white paper :<br>
+      <a href="https://qorgenius-os.xyz/docs" target="_blank">qorgenius-os.xyz/docs</a>
+    </p>
+    <img src="dosc.jpg" alt="QorGenius OS Intro" class="intro-img">
+  </div>
+</section>
+
+<!-- SECURE DOWNLOAD MODAL -->
+<div id="download-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="dl-title">
+  <div class="modal-card">
+    <div class="modal-header">
+      <span class="modal-title" id="dl-title">Generated Code By 0xSpace</span>
+      <button class="modal-close" aria-label="Close" onclick="closeModal()">×</button>
+    </div>
+
+    <div class="modal-body">
+      <div class="icon-wrap">⬇️</div>
+      <h3>Generated Code</h3>
+      <p>World’s first crypto-native operating system built for web3.</p>
+
+      <form id="access-form" onsubmit="generateCode(); return false;">
+        <label for="access-code">Access Code:</label>
+        <input id="access-code" name="access_code" type="text" placeholder="XXXXXXXX" readonly required />
+        <div class="actions">
+          <button type="button" class="btn" onclick="closeModal()">Cancel</button>
+          <button type="submit" class="btn btn-verify">Generate</button>
+        </div>
+      </form>
+
+      <small>Contact the @QorGeniusOS in Twitter to obtain the access code.</small>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openModal() {
+    document.getElementById('download-modal').style.display = 'flex';
+  }
+  function closeModal() {
+    document.getElementById('download-modal').style.display = 'none';
+  }
+  function generateCode() {
+    const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let code = '';
+    for (let i = 0; i < 8; i++) {
+      code += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    document.getElementById('access-code').value = code;
+  }
+</script>
+
+</body>
+</html>
